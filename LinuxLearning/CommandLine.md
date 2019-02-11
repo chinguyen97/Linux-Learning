@@ -38,16 +38,16 @@ tên hostname, và thư mục làm việc.
 
 Có một vài dãy thoát (escape) được sử dụng làm tham số giá trị cho PS1
 
-|Dãy escape	|Mô tả|
-|\t	|Thời gian hiện tại, diễn tả ở dạng HH:MM:SS|
-|\d	|Ngày hiện tại, diễn tả ở dạng Ngày trong tuần Tháng Ngày|
-|\n	|Dòng mới|
-|\s	|Môi trường Shell hiện tại|
-|\W	|Thư mục làm việc|
-|\w	|Đường Path đầy đủ của thư mục làm việc|
-|\h	|Hostname của thiết bị hiện tại|
-|#	|Số lượng lệnh của lệnh hiện tại. Tăng mỗi khi có một lệnh mới được nhập|
-|$	|Nếu UID hiệu quả là 0 (đó là, nếu bạn được đăng nhập như là root), kết thúc dòng nhắc với ký tự #; nếu không thì, sử dụng $.|
+|Dãy escape|Mô tả|
+|\t|Thời gian hiện tại, diễn tả ở dạng HH:MM:SS|
+|\d|Ngày hiện tại, diễn tả ở dạng Ngày trong tuần Tháng Ngày|
+|\n|Dòng mới|
+|\s|Môi trường Shell hiện tại|
+|\W|Thư mục làm việc|
+|\w|Đường Path đầy đủ của thư mục làm việc|
+|\h|Hostname của thiết bị hiện tại|
+|#|Số lượng lệnh của lệnh hiện tại. Tăng mỗi khi có một lệnh mới được nhập|
+|$|Nếu UID hiệu quả là 0 (đó là, nếu bạn được đăng nhập như là root), kết thúc dòng nhắc với ký tự #; nếu không thì, sử dụng $.|
 
 Bạn có thể tạo sự thay đổi bởi chính bạn mỗi khi bạn đăng nhập vào, 
 hoặc bạn có thể có thay đổi được tạo một cách tự động trong PS1 bằng cách 

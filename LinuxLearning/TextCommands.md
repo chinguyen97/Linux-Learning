@@ -228,7 +228,7 @@ $wc -c name
 47 name
 $wc -w name
 12 name
-``
+```
 
 Lệnh `cut`  được sử dụng để thao tác với file cột dựa trên và được thiết kế 
 để trích xuất các cột cụ thể. Dấu phân cách cột mặc định là ký tự tab. 

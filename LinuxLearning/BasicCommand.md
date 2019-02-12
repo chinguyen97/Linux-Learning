@@ -43,6 +43,7 @@ drwxrwxr-x   2 root root 4096 Th01 9 2019 cdrom
 
 Trong ví dụ liệt kê ls -l , mọi dòng tệp bắt đầu bằng d , - hoặc l . 
 Các ký tự này cho biết loại tệp được liệt kê.
+
 |Tiền tố|Mô tả|
 |----|-----|
 |-|Tệp thông thường, chẳng hạn như tệp văn bản ASCII, tệp nhị phân, hoặc liên kết phần cứng.|

@@ -39,6 +39,7 @@ tên hostname, và thư mục làm việc.
 Có một vài dãy thoát (escape) được sử dụng làm tham số giá trị cho PS1
 
 |Dãy escape|Mô tả|
+|-----|-----|
 |\t|Thời gian hiện tại, diễn tả ở dạng HH:MM:SS|
 |\d|Ngày hiện tại, diễn tả ở dạng Ngày trong tuần Tháng Ngày|
 |\n|Dòng mới|

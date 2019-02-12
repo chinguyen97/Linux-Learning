@@ -136,7 +136,8 @@ $ find . -type f -name "*.mp3" -exec cp {} /tmp/MusicFiles \;
 ```
 
 + Tìm file có chứa nội dụng cần tìm kiếm
-`$ find /home -type f -exec grep -l 'linux' {} \;
+```
+$ find /home -type f -exec grep -l 'linux' {} \;
 ```
 Kết quả trả ra tất cả các file mà nội dung có chứa linux
 
@@ -147,10 +148,11 @@ $ find / \( -name '*.txt' -o -name 'doc*' -o -size +5M \)
 Lưu ý rằng bạn phải kết thúc lệnh bằng ‘;’hoặc \;  
 2 cách kết thúc hoạt động giống nhau ngoại trừ việc \; tìm kiếm sẽ nhắc 
 bạn cho phép trước khi thực hiện lệnh. 
+
 ## 4. Sử dụng lệnh **locate**
 
 
-### Tài kiệu tham khảo
+### Tài liệu tham khảo
 https://secure.vinahost.vn/ac/knowledgebase/220/Hng-dn-s-dng-lnh-find-tr-Linux.html
 
 

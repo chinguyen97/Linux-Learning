@@ -58,6 +58,7 @@ Logical Volume
 + B1: Kiểm tra các Hard Drives có trên hệ thống
 
 Sử dụng câu lệnh `lsblk`
+
 ![LVM2](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM2.png)
 
 Trong đó sdb, sdc các Hard Drives mà mình mới thêm vào
@@ -69,21 +70,22 @@ Ví dụ ở đây, từ sdb, mình tạo các partition bằng cách sử dụn
 
 ![LVM3](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM3.png)
 
-++ Bạn chọn **n** để bắt đầu tạo partition
-++ Bạn chọn **p** để tạo partition primary
-++ Bạn chọn **1** để tạo partition primary 1
-++ Tại **First sector** (2048-20971519, default 2048) bạn để mặc định
-++ Tại Last sector, +sectors or +size{K,M,G} (2048-20971519, default 20971519) bạn chọn +1G để partition bạn tạo ra có dung lượng 1 G
-++ Bạn chọn **w** để lưu lại và thoát.
+	+ Bạn chọn **n** để bắt đầu tạo partition
+	+ Bạn chọn **p** để tạo partition primary
+	+ Bạn chọn **1** để tạo partition primary 1
+	+ Tại **First sector** (2048-20971519, default 2048) bạn để mặc định
+	+ Tại Last sector, +sectors or +size{K,M,G} (2048-20971519, default 20971519) bạn chọn +1G để partition bạn tạo ra có dung lượng 1 G
+	+ Bạn chọn **w** để lưu lại và thoát.
  
 Tiếp theo bạn thay đổi định dạng của partition vừa mới tạo thành LVM
 
 ![LVM4](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM4.png)
 
-++ Bạn chọn **t** để thay đổi định dạng partition
-++ Bạn chọn **8e** để đổi thành LVM
+	+ Bạn chọn **t** để thay đổi định dạng partition
+	+ Bạn chọn **8e** để đổi thành LVM
  
 Tương tự, bạn tạo thêm các partition primary từ sdb
+
 ![VL5](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM5.png)
 
 Tạo các partition primary từ `sdc` bằng lệnh `fdisk /dev/sdc`
@@ -107,6 +109,7 @@ Tiếp theo, nhóm các Physical Volume thành 1 Volume Group bằng cách sử 
 ```
 $ vgcreate vg-demo1 /dev/sdb1 /dev/sdc1
 ```
+
 ![VL7](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM7.png)
 
 Trong đó **vg-demo1** là tên của Volume Group
@@ -125,10 +128,10 @@ Từ một Volume Group, Có thể tạo ra các Logical Volume bằng cách s�
 ```
 $ lvcreate -L 1G -n lv-demo1 vg-demo1
 ```
-++ **-L**: Chỉ ra dung lượng của logical volume
-++ **-n**: Chỉ ra tên của logical volume
-++ **lv-demo1** là tên Logical Volume
-++ **vg-demo1** là Volume Group mà mình vừa tạo ở bước trước
+	+ **-L**: Chỉ ra dung lượng của logical volume
+	+ **-n**: Chỉ ra tên của logical volume
+	+ **lv-demo1** là tên Logical Volume
+	+ **vg-demo1** là Volume Group mà mình vừa tạo ở bước trước
 
 Lưu ý: Có thể tạo nhiều Logical Volume từ 1 Volume Group
 
@@ -183,9 +186,9 @@ Trước khi thay đổi dung lượng, cần phải kiểm tra các thông tin 
 
 ![LVM14](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM14.png)
 
-Ở đây, mình đã tạo được Logical Volume là lv-demo1, 
+Ở đây, mình đã tạo được Logical Volume là `lv-demo1`, 
 và giả sử Logical Volume này dung lượng đã đầy và chúng ta cần tăng kích thước của nó.
-Logical Volume này thuộc Volume Group vg-demo1, 
+Logical Volume này thuộc Volume Group `vg-demo1`, 
 để tăng kích thước, bước đầu tiên phải kiểm tra xem Volume Group 
 còn dư dung lượng để kéo giãn Logical Volume không. 
 Logical Volume thuộc 1 Volume Group nhất định, Volume Group đã cấp 
@@ -279,6 +282,7 @@ $ pvremove /dev/sdb3
 ```
 
 **Tài liệu tham khảo:**
+
 [1] https://bachkhoa-aptech.edu.vn/gioi-thieu-ve-logical-volume-manager.html
 
 [2] https://www.tecmint.com/extend-and-reduce-lvms-in-linux/

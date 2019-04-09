@@ -1,4 +1,4 @@
-
+﻿
 Linux quản lý hệ thống trên một hệ thống tệp tin, bắt đầu từ thư mục `root (/)`
  đây là thư mục được cấp quyền cao nhất.
  
@@ -7,6 +7,7 @@ Cấu trúc cơ bản của hệ thống Linux như sau:
 ![caythumuc](https://st.quantrimang.com/photos/image/122011/05/tree.jpg)
 ### 1. / -root: là thư mục root, 
 
++ Đây là nơi bắt đầu tất cả accs file, thư mục. 
 + Chỉ có Root user mới có quyền truy cập, quyền viết dưới thư mục này.
 + Lưu ý rằng **/root** là thư mục gốc của Root user.
 

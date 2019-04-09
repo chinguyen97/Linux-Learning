@@ -6,12 +6,6 @@ Trong Unix, có ba loại tệp cơ bản
 + **Tệp đặc biệt** - Một số tệp đặc biệt cung cấp quyền truy cập vào phần cứng như ổ cứng, ổ đĩa CD-ROM, modem và bộ điều hợp Ethernet.  
 
 ### 1. Tạo, xóa file, thư mục
-- Tạo 1 thư mục
-
-Cú pháp: 
-```
-$ mkdir <filename>
-```
 
 - Tạo file
 
@@ -24,15 +18,35 @@ VD:
 ```
 $ touch –t 02122019 file1
 ```
+
+- Tạo 1 thư mục
+
+Cú pháp: 
+```
+$ mkdir <filename>
+```
+
 -	Xóa file
 Sử dụng lệnh rm .  
 Cú pháp:
 ```
 $ rm filename
 ```
- `rm –r “filename”`  : Hỏi trước khi xóa
+ `rm –r filename`  
  
- `rm –rf “filename”` Xóa không hỏi trước.
+ `rm –rf “filename”` 
+
+ Hoặc : `rm -i filemane` Xác nhận trước khi xóa
+
+ - Xóa thư mục
+
+ `rm -d name` : Xóa thư mục trống
+
+ `rm -r name`
+
+`rm -rf name`
+
+Hoặc `rm -ri name` : Xác nhận trước khi xóa.
 
 ### 2. Copy, di chuyển , đổi tên
 - Sao chép tệp tin
@@ -40,8 +54,11 @@ $ rm filename
 Sử dụng lệnh cp . 
 Cú pháp:
 ```
-$ cp source_file destination_file
+$ cp -v -p source_file destination_file
 ```
+Option -v: Hiển thị quá trình copy
+
+Option -p: copy giữ nguyên thuộc tính của file
 
 - Đổi tên tập tin
 
@@ -59,6 +76,16 @@ $ diff filename1 filename2
 `diff –c` : so sánh cả ngày giờ
 
 `diff –i` : so sánh theo từng lỗi.
+
+- Sao chép thư mục
+
+Cú pháp: 
+```
+cp sourcefolder desfolder
+```
+`cp -r`: Copy toàn bộ file, thư mục con của thư mục được copy
+
+`cp -a`: Bao gồm -r và duy trì các thuộc tính của file, thư mục con.
 ### 3. Các lệnh đọc file
 
 #### 3.1. Cat 

@@ -26,9 +26,9 @@ $ ls –l file1
 -rwxr-xr-- chichi chichi 0 Th01 9 14:52 file1
 ```
 
-•	Các ký tự đầu tiên từ 1 đến 3 (2-4 trong dãy kể cả dấu -) quyền hạn người sử hữu file. 
-•	Nhóm 3 ký tự tiếp theo từ 5-7 quyền của nhóm
-•	Nhóm 3 ký tự cuối cùng từ 8-10 quyền hạn truy cập khác. 
+- Các ký tự đầu tiên từ 1 đến 3 (2-4 trong dãy kể cả dấu -) quyền hạn người sử hữu file. 
+- Nhóm 3 ký tự tiếp theo từ 5-7 quyền của nhóm
+- Nhóm 3 ký tự cuối cùng từ 8-10 quyền hạn truy cập khác. 
 
 Trong ví dụ trên người sở hữu có cho phép đọc (r), ghi (w), và chạy chương trình (x). 
 Nhóm có cho phép đọc (r) và thực thi (x), nhưng không cho phép ghi (w). Người dùng khác cho phép đọc (r).
@@ -90,6 +90,8 @@ $chmod 755 file1
 $ ll file1
 -rwxr-xr-xchichi chichi 0 Th01 9 14:52 file1
 ```
+ ***Thư mục được phân quyền mặc định là 777 là initrd.img và vmlinuz***
+
 ## 2. Thay đổi người sở hữu và nhóm trong Unix/Linux
 
 + **chown**: Thay đổi sở hữu cá nhân (change owner).
@@ -103,7 +105,7 @@ $ chown user filelist
 ```
 Giá trị của `user` có thể là tên hoặc ID của người sử dụng trên hệ thống. Ví dụ:
 Ví dụ:
-````
+```
 $ chown nguoidung file1
 $
 ```

@@ -9,14 +9,17 @@ LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ c�
 + Không để hệ thống bị gián đoạn hoạt động
 + Không làm hỏng dịch vụ
 + Có thể kết hợp Hot Swapping (thao tác thay thế nóng các thành phần bên trong máy tính)
+
 **Ưu điểm.**
 + Có thể tạo ra các vùng dung lượng lớn nhỏ tuỳ ý.
 + Có thể thay đổi các vùng dung lượng đó dễ dàng, linh hoạt mà không cần thay đổi dung lượng các partition.
+
 **Nhược điểm.**
 + Các bước thiết lập phức tạp, khó khăn hơn.
 + Càng gắn nhiều đĩa cứng và thiết lập càng nhiều LVM thì hệ thống khởi động càng lâu.
 + Khả năng mất dữ liệu khi một trong số các đĩa cứng vật lý bị hỏng.
 + Windows không thể nhận ra vùng dữ liệu của LVM. Nếu bạn Dual-boot Windows sẽ không thể truy cập dữ liệu chứa trong LVM.
+
 ### 1.3 Các thành phần trong LVM
 ![lvm1](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM1.png)
 
@@ -32,8 +35,8 @@ Partitions là các phân vùng của Hard drives, gồm 2 loại là **primary 
 
 + **Physical Volumes**
 
-Là một cách gọi khác của partition trong kỹ thuật LVM, nó là những 
-thành phần cơ bản được sử dụng bởi LVM. 
+Là một cách gọi khác của partition trong kỹ thuật LVM, nó là những thành phần cơ bản được sử dụng bởi LVM. 
+
 Một Physical Volume không thể mở rộng ra ngoài phạm vi một ổ đĩa.
 
 + **Volume Group**
@@ -41,14 +44,12 @@ Một Physical Volume không thể mở rộng ra ngoài phạm vi một ổ đ�
 Nhiều Physical Volume kết hợp thành Volume Groups.
 Trong đó người dùng có thể tạo, thay đổi kích thước, lưu trữ, gỡ bỏ và sử dụng.
 + **Logical Volume**
+
 Volume Group được chia nhỏ thành nhiều Logical Volume, 
 mỗi Logical Volume có ý nghĩa tương tự như partition. 
-Nó được dùng cho các mount point và được format với những định dạng 
-khác nhau như ext2, ext3, ext4,…
+Nó được dùng cho các mount point và được format với những định dạng khác nhau như ext2, ext3, ext4,…
 
-Khi dung lượng của Logical Volume được sử dụng hết ta có thể đưa thêm 
-ổ đĩa mới bổ sung cho Volume Group và do đó tăng được dung lượng của 
-Logical Volume
+Khi dung lượng của Logical Volume được sử dụng hết ta có thể đưa thêm ổ đĩa mới bổ sung cho Volume Group và do đó tăng được dung lượng của Logical Volume
 
 ### 2. Hướng dẫn sử dụng LVM
 #### 2.1 Chuẩn bị
@@ -198,12 +199,16 @@ phát hết thì Logical Volume cũng không thể tăng dung lượng được.
 
 ![LVM15](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM15.png)
 
-Volume Group ở đây vẫn còn dung lượng để cấp phát, ta có thể nhận thấy điều này qua 2 trường thông tin là VG Status resizable và Free PE / Size 510 / 1.99 GiB với dung lượng Free là 510*4 = 2040 Mb
+Volume Group ở đây vẫn còn dung lượng để cấp phát, ta có thể nhận thấy điều này qua 2 trường thông tin là VG Status resizable và Free PE / Size 510 / 1.99 GiB với dung lượng Free là 510x4 = 2040 Mb
+
 Để tăng kích thước Logical Volume ta sử dụng câu lệnh sau:
+
 ```
 $ lvextend -L +50M /dev/vg-demo1/lv-demo1
 ```
+
 Với -L là tùy chọn để tăng kích thước
+
 ![LVM16](https://github.com/chinguyen97/Linux-Learning/blob/master/images/LVM16.png)
 
 Kiểm tra lại bằng cách dùng lệnh: `$ lvs`
@@ -213,6 +218,7 @@ Kiểm tra lại bằng cách dùng lệnh: `$ lvs`
 Sau khi tăng kích thước cho Logical Volume thì Logical Volume đã được 
 tăng nhưng file system trên volume này vẫn chưa thay đổi, 
 bạn phải sử dụng lệnh sau để thay đổi:
+
 ```
 $ resize2fs /dev/vg-demo1/lv-demo1
 ```
@@ -236,6 +242,7 @@ Cuối cùng là mount lại Logical Volume
 $ mount /dev/vg-demo1/lv-demo1 demo1
 ```
 Kiểm tra kết quả ta được như sau: `$ df -h`
+
 #### 2.4 Thay đổi dung lượng Volume Group
 
 Trước tiên, các bạn cần kiểm tra lại các partition và Volume Group
@@ -256,6 +263,7 @@ $ vgreduce /dev/vg-demo1 /dev/sdb3
 ```
 
 #### 2.5 Xóa Logical Volume, Volume Group, Physical Volume
+
 + Xóa Logical Volumes
 
 Trước tiên ta phải Umount Logical Volume

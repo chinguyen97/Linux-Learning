@@ -69,7 +69,7 @@ $ ll file1
 
 ## 1.2 Sử dụng chmod với quyền hạn truy cập tuyệt đối trong Unix/Linux
 
-Cách thứ hai để chỉnh sửa quyền hạn truy cập với lệnh chmod là sử dụng số để xác định các quyền hạn truy cập cho file.
+Cách thứ hai để chỉnh sửa quyền hạn truy cập với lệnh `chmod` là sử dụng số để xác định các quyền hạn truy cập cho file.
 
 |Số|Đại diện cho quyền hạn truy cập trong hệ cơ số 8|Tham chiếu|
 |-----|-----|-----|
@@ -91,6 +91,7 @@ $ ll file1
 -rwxr-xr-xchichi chichi 0 Th01 9 14:52 file1
 ```
  ***Thư mục được phân quyền mặc định là 777 là initrd.img và vmlinuz***
+**Tùy chọn -R để thay đổi phân quyền tất cả các thư mục và file bên trong**
 
 ## 2. Thay đổi người sở hữu và nhóm trong Unix/Linux
 

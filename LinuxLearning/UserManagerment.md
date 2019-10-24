@@ -5,6 +5,14 @@ User là người có thể truy cập đến hệ thống. User có username v�
 
 Có hai loại user: 
 - Super user: root có thể chạy bất cứ lệnh nào trên hệ thống mà không bị hạn chế. Để tạo một người dùng mới, thay đổi thuộc tính của một người dùng cũng như xóa bỏ một người dùng chỉ khi có quyền root.
+
+***Note***: Với phiên bản UbuntuDesktop mặc định tài khoản root sẽ bị vô hiệu hóa cho đến khi được kích hoạt lại. Việc kích hoạt đơn giản là thay đổi passwd root. 
+
+```
+sudo -i
+passwd root
+```
+
 - Regular user: Thường bị giới hạn truy cập vào những file và thư mục có tính chất quan trọng.
  
 ### 1.1. Tạo user 
@@ -69,6 +77,12 @@ Tùy chọn -r đẻ gưc bỏ thư mục chính và mail của tài khoản.
 Khóa `passwd -l <username>`
 
 Mở `passwd -u <username>`
+- 
+- **Kiểm tra trạng thái user**
+
+`passwd --status user`
+
+Mở khóa có cờ: PS. Khóa có cờ LK
 
 - **Kiểm tra uid**
 
